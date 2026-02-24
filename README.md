@@ -19,9 +19,9 @@
 
 ---
 
-## 🌟 <span style="font-family: 'Outfit', sans-serif;">About the Project</span>
+## 🌟 <span style="font-family: 'Outfit', sans-serif; color: #2D6A4F;">About the Project</span>
 
-<div style="font-family: 'Inter', sans-serif; line-height: 1.7; color: #333;">
+<div style="font-family: 'Inter', sans-serif; line-height: 1.7;">
 <strong>FoodLink</strong> is a socially impactful web application designed to reduce food waste and fight hunger by <strong>connecting individuals and organizations with surplus food</strong> to those who need it most. Whether it’s a restaurant, event, or household with extra food, FoodLink enables donors to list surplus meals and allows NGOs or individuals to request and collect it safely and efficiently.
 
 The platform recently underwent a comprehensive UI/UX redesign featuring a <strong>stunning glassmorphic aesthetic</strong>, interactive slide animations, and heavily optimized frontend code for maximum accessibility and performance.
@@ -35,7 +35,7 @@ The platform recently underwent a comprehensive UI/UX redesign featuring a <stro
 
 ---
 
-## 💡 <span style="font-family: 'Outfit', sans-serif;">Key Features</span>
+## 💡 <span style="font-family: 'Outfit', sans-serif; color: #2D6A4F;">Key Features</span>
 
 <ul style="font-family: 'Inter', sans-serif; line-height: 1.6;">
   <li>👥 <strong>Interactive Login/Signup</strong>: A dynamic, glassmorphic combined authentication slider.</li>
@@ -47,7 +47,7 @@ The platform recently underwent a comprehensive UI/UX redesign featuring a <stro
 
 ---
 
-## 🛠️ <span style="font-family: 'Outfit', sans-serif;">Tech Stack</span>
+## 🛠️ <span style="font-family: 'Outfit', sans-serif; color: #2D6A4F;">Tech Stack</span>
 
 <div style="font-family: 'Inter', sans-serif;">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
@@ -58,7 +58,7 @@ The platform recently underwent a comprehensive UI/UX redesign featuring a <stro
 
 ---
 
-## 👨‍💻 <span style="font-family: 'Outfit', sans-serif;">Developer</span>
+## 👨‍💻 <span style="font-family: 'Outfit', sans-serif; color: #2D6A4F;">Developer</span>
 
 <div style="font-family: 'Inter', sans-serif; padding: 10px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e0e0e0;">
   <h3 style="margin-top: 0; color: #1B4332;">Abdul Mutallif</h3>
@@ -71,7 +71,7 @@ The platform recently underwent a comprehensive UI/UX redesign featuring a <stro
 
 ---
 
-## 🤝 <span style="font-family: 'Outfit', sans-serif;">Contributing</span>
+## 🤝 <span style="font-family: 'Outfit', sans-serif; color: #2D6A4F;">Contributing</span>
 
 <p style="font-family: 'Inter', sans-serif; line-height: 1.6;">
 Pull requests are heavily encouraged and welcome! If you'd like to improve this project—whether that's adding a backend API, refining the design further, or optimizing performance—feel free to fork the repo and submit a PR. 
@@ -81,7 +81,7 @@ For major changes, please open an issue first to discuss what you’d like to ch
 
 ---
 
-## 📄 <span style="font-family: 'Outfit', sans-serif;">License & Acknowledgements</span>
+## 📄 <span style="font-family: 'Outfit', sans-serif; color: #2D6A4F;">License & Acknowledgements</span>
 
 <p style="font-family: 'Inter', sans-serif; line-height: 1.6;">
 This project is open-source and available under the <strong>MIT License</strong>. Special thanks to all food heroes out there working to make the world better by sharing what they have.
