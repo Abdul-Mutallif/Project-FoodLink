@@ -319,10 +319,7 @@ main>h2::after {
     padding-top: 70px;
 }
 
-main:not(.about-page):not(.contact-page):not(.donation-page) {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+
 
 .about-intro,
 .our-mission,
@@ -608,7 +605,7 @@ footer {
     background-color: var(--primary-dark);
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    padding: 30px 20px;
+    padding: 15px 20px;
     margin-top: 60px;
     font-size: 0.95rem;
 }
