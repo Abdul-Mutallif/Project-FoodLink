@@ -158,6 +158,8 @@ main {
     animation: fadeInUp 1s ease-out forwards;
     opacity: 0;
     transform: translateY(30px);
+    color: var(--accent-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
@@ -590,12 +592,15 @@ form button:hover {
 .about-hero h2 {
     font-size: 3.5rem;
     margin-bottom: 10px;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .about-hero .slogan {
     font-size: 1.5rem;
     font-weight: 300;
-    opacity: 0.9;
+    opacity: 0.95;
+    color: var(--bg-white);
 }
 
 /* Footer */
