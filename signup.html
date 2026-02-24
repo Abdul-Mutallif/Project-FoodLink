@@ -1,60 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Slide Navbar</title>
-	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - FoodLink</title>
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-	<header>
-       
+    <header>
         <nav class="navbar">
             <div class="brand">
                 <a href="#foodlink">
-                    <i class="fas fa-utensils"></i> FoodLink
+                    FoodLink
                 </a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="signup.html">SignUp</a></li>
+                <li><a href="signup.html" class="active-nav">Login / SignUp</a></li>
                 <li><a href="donation.html">Donation</a></li>
             </ul>
         </nav>
     </header>
-<main>
-	<div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="signup">
-				<form>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" required="">
-					<input type="email" name="email" placeholder="Email" required="">
-          <input type="text" name="role" placeholder="Role" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Sign up</button>
-				</form>
-			</div>
+    <main>
+        <div class="auth-container" id="auth-container">
+            <div class="auth-toggle-box">
+                <div id="btn-bg"></div>
+                <button type="button" class="toggle-btn" onclick="showLogin()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="showSignup()">Sign Up</button>
+            </div>
 
-			<div class="login">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Login</button>
-				</form>
-
-                <div class="register-forget opacity">
-                    <a href="">FORGOT PASSWORD</a>
+            <!-- Login Form -->
+            <form id="login" class="auth-form-group">
+                <div class="input-group">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="email" id="loginEmail" class="input-field" placeholder="Email Id" required>
                 </div>
-			</div>
-	</div>
+                <div class="input-group">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" id="loginPassword" class="input-field" placeholder="Password" required>
+                </div>
+                <!-- Error message box -->
+                <p id="loginError" class="error-text"></p>
+                <div class="register-forget">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
 
-</main>
-<footer>
-	<p>&copy; 2024 FoodLink | Impact Makers. All rights reserved.</p>
-</footer>
+            <!-- Signup Form -->
+            <form id="signup" class="auth-form-group">
+                <div class="input-group">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" id="signupUser" class="input-field" placeholder="User name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="email" id="signupEmail" class="input-field" placeholder="Email Id" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-id-badge icon"></i>
+                    <select id="signupRole" class="input-field" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="donor">Food Donor</option>
+                        <option value="recipient">Institution / Recipient</option>
+                        <option value="volunteer">Volunteer</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" id="signupPassword" class="input-field" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-check-circle icon"></i>
+                    <input type="password" id="signupConfirmPassword" class="input-field" placeholder="Confirm Password"
+                        required>
+                </div>
+                <!-- Error message box -->
+                <p id="signupError" class="error-text"></p>
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+                <button type="submit" class="submit-btn" style="background: var(--primary-color);">Create
+                    Account</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FoodLink | Abdul Mutallif. All rights reserved.</p>
+    </footer>
+
+    <!-- Dedicated JS for Auth Form -->
+    <script>
+        const loginForm = document.getElementById("login");
+        const signupForm = document.getElementById("signup");
+        const btnBg = document.getElementById("btn-bg");
+        const authContainer = document.getElementById("auth-container");
+
+        function showSignup() {
+            loginForm.style.left = "-450px";
+            signupForm.style.left = "30px";
+            btnBg.style.left = "50%";
+            // Dynamic resize for the container based on form size
+            authContainer.style.height = "620px";
+        }
+
+        function showLogin() {
+            loginForm.style.left = "30px";
+            signupForm.style.left = "500px";
+            btnBg.style.left = "0";
+            authContainer.style.height = "480px";
+        }
+
+        // Advanced JS Validation
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = document.getElementById("loginEmail").value.trim();
+            const pass = document.getElementById("loginPassword").value.trim();
+            const err = document.getElementById("loginError");
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                err.innerText = "Please enter a valid email address.";
+                return;
+            }
+            if (pass.length < 6) {
+                err.innerText = "Password must be at least 6 characters long.";
+                return;
+            }
+            err.innerText = "";
+            err.style.color = "var(--primary-light)";
+            err.innerText = "Logging in...";
+
+            setTimeout(() => {
+                alert("Login successful!");
+                loginForm.reset();
+                err.innerText = "";
+            }, 500);
+        });
+
+        signupForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const user = document.getElementById("signupUser").value.trim();
+            const email = document.getElementById("signupEmail").value.trim();
+            const role = document.getElementById("signupRole").value;
+            const pass = document.getElementById("signupPassword").value;
+            const confPass = document.getElementById("signupConfirmPassword").value;
+            const terms = document.getElementById("terms").checked;
+            const err = document.getElementById("signupError");
+
+            if (user.length < 3) {
+                err.innerText = "Username must be at least 3 characters.";
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                err.innerText = "Please enter a valid email address.";
+                return;
+            }
+            if (role === "") {
+                err.innerText = "Please select a role.";
+                return;
+            }
+            if (pass.length < 6) {
+                err.innerText = "Password must be at least 6 characters long.";
+                return;
+            }
+            if (pass !== confPass) {
+                err.innerText = "Passwords do not match!";
+                return;
+            }
+            if (!terms) {
+                err.innerText = "You must accept the terms & conditions.";
+                return;
+            }
+
+            err.style.color = "var(--primary-light)";
+            err.innerText = "Creating account...";
+
+            setTimeout(() => {
+                alert("Account successfully created!");
+                signupForm.reset();
+                err.innerText = "";
+                showLogin();
+            }, 800);
+        });
+
+        // Ensure starting on Login tab correctly
+        showLogin();
+    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>

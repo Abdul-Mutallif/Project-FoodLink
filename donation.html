@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - FoodLink</title>
     <link rel="stylesheet" href="donation_styles.css">
 </head>
+
 <body>
     <header>
-       
+
         <nav class="navbar">
             <div class="brand">
-                <a href="#foodlink">
-                    <i class="fas fa-utensils"></i> FoodLink
+                <a href="#foodlink" aria-label="FoodLink Home">
+                    <i class="fas fa-utensils" aria-hidden="true"></i> FoodLink
                 </a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="signup.html">SignUp</a></li>
-                <li><a href="donation.html">Donation</a></li>
+                <li><a href="signup.html">Login / SignUp</a></li>
+                <li><a href="donation.html" class="active-nav">Donation</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main class="donation-page">
         <section class="donation-hero">
             <h2>Make a Difference</h2>
-            <p>Your contributions help us fight hunger and reduce food waste. Choose how you want to support us below.</p>
+            <p>Your contributions help us fight hunger and reduce food waste. Choose how you want to support us below.
+            </p>
         </section>
 
         <section class="donation-options">
@@ -54,7 +57,8 @@
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
 
                 <label for="food-details">Details of Food:</label>
-                <textarea id="food-details" name="food-details" rows="4" placeholder="Describe the food you wish to donate" required></textarea>
+                <textarea id="food-details" name="food-details" rows="4"
+                    placeholder="Describe the food you wish to donate" required></textarea>
 
                 <button type="submit">Submit Food Donation</button>
             </form>
@@ -76,11 +80,12 @@
             </form>
         </section>
     </main>
-    
+
     <footer>
-        <p>&copy; 2024 FoodLink | Impact Makers. All rights reserved.</p>
+        <p>&copy; 2024 FoodLink | Abdul Mutallif. All rights reserved.</p>
     </footer>
 
     <script src="donation_script.js"></script>
 </body>
+
 </html>
