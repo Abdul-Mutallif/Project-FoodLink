@@ -124,6 +124,35 @@ header {
     width: 100%;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    /* Ensure it stays above the side menu */
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-dark);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Toggle Animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Main Section */
 main {
     flex: 1;
@@ -392,23 +421,59 @@ footer {
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem 5%;
-        flex-direction: column;
-        gap: 15px;
+        justify-content: space-between;
     }
 
     .nav-links {
-        flex-wrap: wrap;
+        position: fixed;
+        right: 0px;
+        height: 100vh;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        gap: 10px;
+        width: 100%;
+        max-width: 300px;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        gap: 2rem;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: 1.5rem;
     }
 
     .nav-links li {
         margin: 5px 10px;
+        opacity: 0;
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
     }
 
     .auth-container {
         width: 100%;
-        max-width: 400px;
+        max-width: 420px;
         padding: 40px 20px;
     }
 

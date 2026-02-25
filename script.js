@@ -56,4 +56,28 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksLi = document.querySelectorAll('.nav-links li');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            // Toggle Nav
+            navLinks.classList.toggle('nav-active');
+
+            // Animate Links
+            navLinksLi.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            // Hamburger Animation
+            hamburger.classList.toggle('toggle');
+        });
+    }
 });
